@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Choose your dog</title>
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+            <h1>Choose your dog</h1>
+
+        </header>
+        <section class="random">
+            <div class="random__card-wrapper card-wrapper"></div>
+            <div class="random__refresh-button">
+                <button type="button" onclick="getRandomDogs()">Random dogs</button>
+            </div>
+        </section>
+        <section class="favourites">
+            <div class="favourites__title">
+                <h2>Favourite Dogs</h2>
+            </div>
+            <div class="favourites__card-wrapper card-wrapper"></div>
+        </section>
+        <section class="upload">
+            <div class="upload__title">
+                <h2>Upload your dog</h2>
+            </div>
+            <div class="upload__document">
+                <form id="upload-picture">
+                    <input type="file" name="file">
+                    <div class="upload__panel">
+                        <div class="preview">
+                            <img src="" alt="image preview">
+                        </div>
+                        <button type="button" onclick="uploadDog()">Upload Dog</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+        <footer>
+            <ul>
+                <li>Github repository: <a href="">algo</a></li>
+                <li>Twitter: <a href="">@ricardoalgo</a></li>
+            </ul>
+        </footer>
+    </div>
+    
+    <script src="./index.js"></script>
+</body>
+</html>
