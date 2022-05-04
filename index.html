@@ -20,7 +20,7 @@
         <section class="random">
             <div class="random__card-wrapper card-wrapper"></div>
             <div class="random__refresh-button">
-                <button type="button" onclick="getRandomDogs()"><span></span> Random dogs</button>
+                <button type="button" onclick="getRandomDogs()"><span></span>Get random dogs</button>
             </div>
         </section>
         <section class="favourites">
@@ -35,21 +35,22 @@
             </div>
             <div class="upload__document">
                 <form id="upload-picture">
-                    <label for="file">Select file</label>
+                    <label for="file" tabindex="0">Select file</label>
                     <input type="file" name="file" id="file">     
                 </form>
                 <div class="upload__panel">
                     <div class="preview">
                         <img src="" alt="image preview">
                     </div>
-                    <button type="button" onclick="uploadDog()">Upload Dog</button>
+                    <button type="button" onclick="uploadDog()"><span></span> Upload Dog</button>
                 </div>
+                <p class="upload-message"></p>
             </div>
         </section>
         <footer>
             <ul>
-                <li>Github repository: <a href="">algo</a></li>
-                <li>Twitter: <a href="">@ricardoalgo</a></li>
+                <li>Github repository: <a href="https://github.com/ricandres98/dogs-api-rest" target="_blank">dogs-api-rest</a></li>
+                <li>Twitter: <a href="https://twitter.com/ricandres_98" target="_blank">@ricandres_98</a></li>
             </ul>
         </footer>
     </div>

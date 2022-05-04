@@ -1,6 +1,8 @@
 :root {
     --primary-color-1: #495E87;
-    --primary-color-1-dark: #1C2E53;
+    --primary-color-1-dark-1: #1C2E53;
+    --primary-color-1-dark-2: #0E1D3B;
+    --negative-color-1: #801F19; 
     --grey: #CFD6E6;
     --black: #0E1D3B;
     --white: #E6EAF2;
@@ -11,16 +13,21 @@
     padding: 0;
     box-sizing: border-box;
 }
+*:focus-visible {
+    outline: 2px solid var(--primary-color-1-dark-2);
+    
+}
 html {
     font-size: 62.5%;
 }
 body {
     font-family: var(--font-1);
     color: var(--black);
+    background-color: var(--white);
 }
 .wrapper {
     display: grid;
-    grid-template-rows: 75px 450px auto auto 90px;
+    grid-template-rows: minmax(75px, auto) minmax(450px, auto) auto auto minmax(90px, auto);
     /* align-content: stretch; */
 }
 
@@ -50,9 +57,17 @@ header h1 {
 /*-------------------
     CAROUSEL
 ------------------*/
+.carousel {
+    /* width: 100vw;
+    padding: 10px 0;
+    overflow-x: auto;
+    scroll-snap-align: center; */
+
+}
 .card-wrapper {
-    width: 100vw;
+    width: 98vw;
     display: flex;
+    margin: 0 auto;
     justify-content: flex-start;
     align-items: center;
     min-height: 320px;
@@ -60,14 +75,14 @@ header h1 {
     gap: 33px;
     overflow-x: auto;
     background-color: var(--white);
-    /* scroll-snap-align: center; */
+    scroll-snap-align: center;
     scroll-snap-type: x proximity;
 }
 .card-item {
     position: relative;
     min-width: 220px;
-    width: clamp(220px, 350px, 300px);
-    max-height: 320px;
+    width: clamp(220px, 250px, 300px);
+    max-height: 300px;
     border-radius: 5px;
     overflow: hidden;
     box-shadow: -5px -5px 15px rgba(255, 255, 255, 0.5), -10px -10px 15px rgba(255, 255, 255, 0.52), 10px 10px 15px rgba(0, 0, 0, 0.15);
@@ -94,6 +109,7 @@ header h1 {
     color: var(--black);
     background-color: var(--white);
     box-shadow: 0px 2px 5px rgba(0,0,0, 0.3);
+    cursor: pointer;
 }
 .card-item button:active {
     background-color: var(--grey);
@@ -106,15 +122,29 @@ header h1 {
 }
 .random__refresh-button button{
     border: none;
-    padding: 13px 18px;
+    padding: 13px 30px;
     font-size: 2rem;
+    line-height: 2.34rem;
     font-family: var(--font-1);
     color: var(--white);
     background-color: var(--primary-color-1);
     border-radius: 10px;
+    cursor: pointer;
+
 }
 .random__refresh-button button:active{
-    background-color: var(--primary-color-1-dark);
+    background-color: var(--primary-color-1-dark-1);
+}
+.random__refresh-button button span {
+    display: inline-block;
+    width: 22px;
+    height: 24px;
+    vertical-align: middle;
+    margin-right: 5px;
+    background-image: url('./assets/refresh.svg');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 /*----------------------
     FAVOURITES
@@ -131,7 +161,10 @@ header h1 {
     font-size: 2rem;
     text-transform: uppercase;
 }
-
+.favourites__card-wrapper .card-item button{
+    color: var(--white);
+    background-color: var(--negative-color-1);
+}
 /*----------------
     UPLOAD DOG
     --------------*/
@@ -164,13 +197,77 @@ form {
     color: var(--white);
     background-color: var(--primary-color-1);
     border-radius: 10px;
+    cursor: pointer;
+
 }
 .upload__document label:active {
-    background-color: var(--primary-color-1-dark);
+    background-color: var(--primary-color-1-dark-1);
 }
 .upload__document input[type="file"]{
     display: none;
 }
 .upload__panel {
     display: none;
+}
+.preview {
+    max-width: 250px;
+    margin: 30px auto;
+    border: 1px solid var(--primary-color-1-dark-1);
+}
+.preview img{
+    display: block;
+    max-width: 150px;
+    margin: 15px auto;
+}
+.upload__panel button {
+    display: block;
+    margin: 0 auto;
+    width: fit-content;
+    padding: 14px 32px;
+    border: none;
+    font-size: 2rem;
+    color: var(--white);
+    background-color: var(--primary-color-1-dark-1);
+    border-radius: 10px;
+    cursor: pointer;
+}
+.upload__panel button:active {
+    background-color: var(--primary-color-1);
+}
+.upload__panel button span {
+    display: inline-block;
+    width: 22px;
+    height: 20px;
+    margin-right: 5px;
+    background-image: url('./assets/upload-icon.svg');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.upload-message {
+    width: 250px;
+    margin: 30px auto 0;
+    font-size: 1.6rem;
+}
+/*-------------------------
+    FOOTER
+    ----------------------*/
+
+footer {
+    padding: 30px 25px;
+    font-size: 1.6rem;
+    /* font-weight: 600; */
+    color: var(--white);
+    background-color: var(--primary-color-1);
+}
+footer ul {
+    list-style: none;
+}
+footer li {
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+footer li a {
+    margin-left: 5px;
+    color: var(--white);
 }

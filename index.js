@@ -122,6 +122,8 @@ async function deleteFavourite(id) {
 async function uploadDog() {
     const form = document.getElementById('upload-picture');
     const formData = new FormData(form);
+    const uploadPanel = document.querySelector('.upload__panel');
+    const uploadMessage = document.querySelector('.upload-message');
 
     const response = await fetch(API_URL_UPLOAD, {
         method: 'POST',
@@ -132,11 +134,18 @@ async function uploadDog() {
     });
     const data = await response.json();
     
+    uploadPanel.style.display = 'none';
+
     if(response.status > 299) {
         console.error(response, data);
+
+        uploadMessage.style.display = 'block';
+        uploadMessage.innerText = data.message;
     } else {
         console.log(response, data);
         addFavourite(data.id);
+        uploadMessage.style.display = 'block';
+        uploadMessage.innerText = 'Dog uploaded successfully';
     }
     
 }
@@ -146,6 +155,10 @@ inputFile.addEventListener('change', () => {
     const fileList = inputFile.files;
     const img = document.querySelector('.preview img');
     const uploadPanel = document.querySelector('.upload__panel');
+    const uploadMessage = document.querySelector('.upload-message');
+
+    uploadPanel.style.display = 'block'
+    uploadMessage.style.display = 'none';
 
     if(fileList.length) {
         img.src = URL.createObjectURL(fileList[0]);
