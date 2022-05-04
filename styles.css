@@ -42,8 +42,16 @@ header {
     background-color: var(--white);
 }
 header h1 {
+    display: flex;
+    align-items: center;
     font-size: 2rem;
     text-transform: uppercase;
+    vertical-align: middle;
+}
+header h1 img {
+    width: 45px;
+    height: 45px;
+    margin-right: 10px;
 }
 
 /*--------------------------
@@ -85,7 +93,9 @@ header h1 {
     max-height: 300px;
     border-radius: 5px;
     overflow: hidden;
-    box-shadow: -5px -5px 15px rgba(255, 255, 255, 0.5), -10px -10px 15px rgba(255, 255, 255, 0.52), 10px 10px 15px rgba(0, 0, 0, 0.15);
+    /* box-shadow: -5px -5px 15px rgba(255, 255, 255, 0.5), 
+                -10px -10px 15px rgba(255, 255, 255, 0.52), 
+                10px 10px 15px rgba(0, 0, 0, 0.15); */
     scroll-snap-align: center;
 }
 .card-item img {
@@ -117,11 +127,12 @@ header h1 {
 .random__refresh-button {
     display: grid;
     place-content: center;
-    min-height: 130px;
+    min-height: 140px;
     background-color: var(--white);
 }
 .random__refresh-button button{
     border: none;
+    margin: 20px auto 80px;
     padding: 13px 30px;
     font-size: 2rem;
     line-height: 2.34rem;
@@ -129,6 +140,10 @@ header h1 {
     color: var(--white);
     background-color: var(--primary-color-1);
     border-radius: 10px;
+    box-shadow: -5px -5px 15px rgba(255, 255, 255, 0.5), 
+                -10px -10px 15px rgba(255, 255, 255, 0.52), 
+                10px 10px 15px rgba(0, 0, 0, 0.15);
+
     cursor: pointer;
 
 }
@@ -197,6 +212,9 @@ form {
     color: var(--white);
     background-color: var(--primary-color-1);
     border-radius: 10px;
+    box-shadow: -5px -5px 15px rgba(255, 255, 255, 0.5), 
+                -10px -10px 15px rgba(255, 255, 255, 0.52), 
+                10px 10px 15px rgba(0, 0, 0, 0.15);
     cursor: pointer;
 
 }
@@ -229,6 +247,9 @@ form {
     color: var(--white);
     background-color: var(--primary-color-1-dark-1);
     border-radius: 10px;
+    box-shadow: -5px -5px 15px rgba(255, 255, 255, 0.5), 
+                -10px -10px 15px rgba(255, 255, 255, 0.52), 
+                10px 10px 15px rgba(0, 0, 0, 0.15);
     cursor: pointer;
 }
 .upload__panel button:active {
