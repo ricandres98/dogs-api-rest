@@ -1,4 +1,4 @@
-const API_URL_RANDOM = 'https://api.thedogapi.com/v1/images/search?limit=2';
+const API_URL_RANDOM = 'https://api.thedogapi.com/v1/images/search?limit=5';
 const API_URL_FAVOURITE = 'https://api.thedogapi.com/v1/favourites';
 const API_URL_UPLOAD = 'https://api.thedogapi.com/v1/images/upload';
 const API_URL_FAVOURITE_DELETE = (id) => `https://api.thedogapi.com/v1/favourites/${id}`;
@@ -84,7 +84,7 @@ async function getFavouritesDogs() {
         img.src = dog.image.url;
 
         const button = document.createElement('button');
-        const buttonText = document.createTextNode('- Remove Favourite');
+        const buttonText = document.createTextNode('Remove');
         button.appendChild(buttonText);
         button.type = 'button';
 

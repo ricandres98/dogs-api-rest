@@ -1,0 +1,176 @@
+:root {
+    --primary-color-1: #495E87;
+    --primary-color-1-dark: #1C2E53;
+    --grey: #CFD6E6;
+    --black: #0E1D3B;
+    --white: #E6EAF2;
+    --font-1: 'Roboto', sans-serif;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    font-size: 62.5%;
+}
+body {
+    font-family: var(--font-1);
+    color: var(--black);
+}
+.wrapper {
+    display: grid;
+    grid-template-rows: 75px 450px auto auto 90px;
+    /* align-content: stretch; */
+}
+
+/*---------------------
+    HEADER
+---------------------*/
+
+header {
+    display: flex;
+    align-items: center;
+    padding: 0 25px;
+    background-color: var(--white);
+}
+header h1 {
+    font-size: 2rem;
+    text-transform: uppercase;
+}
+
+/*--------------------------
+    RANDOM CARDS
+---------------------------*/
+
+.random, .favourites {
+    /* overflow-x: auto; */
+    width: 100%;
+}
+/*-------------------
+    CAROUSEL
+------------------*/
+.card-wrapper {
+    width: 100vw;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    min-height: 320px;
+    padding: 10px 33px;
+    gap: 33px;
+    overflow-x: auto;
+    background-color: var(--white);
+    /* scroll-snap-align: center; */
+    scroll-snap-type: x proximity;
+}
+.card-item {
+    position: relative;
+    min-width: 220px;
+    width: clamp(220px, 350px, 300px);
+    max-height: 320px;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: -5px -5px 15px rgba(255, 255, 255, 0.5), -10px -10px 15px rgba(255, 255, 255, 0.52), 10px 10px 15px rgba(0, 0, 0, 0.15);
+    scroll-snap-align: center;
+}
+.card-item img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    /* vertical-align: bottom; */
+    object-fit: cover;
+    object-position: center;
+}
+.card-item button {
+    position: absolute;
+    right: 15px;
+    bottom: 10px;
+    padding: 10px 15px;
+    border: none;
+    font-family: var(--font-1);
+    font-size: 1.4rem;
+    font-weight: bold;
+    border-radius: 10px;
+    color: var(--black);
+    background-color: var(--white);
+    box-shadow: 0px 2px 5px rgba(0,0,0, 0.3);
+}
+.card-item button:active {
+    background-color: var(--grey);
+}
+.random__refresh-button {
+    display: grid;
+    place-content: center;
+    min-height: 130px;
+    background-color: var(--white);
+}
+.random__refresh-button button{
+    border: none;
+    padding: 13px 18px;
+    font-size: 2rem;
+    font-family: var(--font-1);
+    color: var(--white);
+    background-color: var(--primary-color-1);
+    border-radius: 10px;
+}
+.random__refresh-button button:active{
+    background-color: var(--primary-color-1-dark);
+}
+/*----------------------
+    FAVOURITES
+    --------------------*/
+
+.favourites__title {
+    display: flex;
+    padding: 0 25px;
+    height: 50px;
+    align-items: center;
+    background-color: var(--white);
+}
+.favourites__title h2 {
+    font-size: 2rem;
+    text-transform: uppercase;
+}
+
+/*----------------
+    UPLOAD DOG
+    --------------*/
+
+.upload__title {
+    display: flex;
+    padding: 0 25px;
+    height: 75px;
+    align-items: center;
+    background-color: var(--white);
+}
+.upload__title h2 {
+    font-size: 2rem;
+    text-transform: uppercase;
+}
+.upload__document {
+    padding: 33px 0;
+    background-color: var(--white);
+}
+form {
+    display: block;
+    width: 100%;
+}
+.upload__document label {
+    display: block;
+    width: fit-content;
+    margin: 0 auto;
+    padding: 13px 45px;
+    font-size: 2rem;
+    color: var(--white);
+    background-color: var(--primary-color-1);
+    border-radius: 10px;
+}
+.upload__document label:active {
+    background-color: var(--primary-color-1-dark);
+}
+.upload__document input[type="file"]{
+    display: none;
+}
+.upload__panel {
+    display: none;
+}
