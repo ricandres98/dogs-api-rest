@@ -71,8 +71,8 @@ header h1 {
     justify-content: flex-start;
     align-items: center;
     min-height: 320px;
-    padding: 10px 33px;
-    gap: 33px;
+    padding: 30px 50px;
+    gap: 60px;
     overflow-x: auto;
     background-color: var(--white);
     scroll-snap-align: center;
