@@ -1,0 +1,49 @@
+.wrapper {
+    /* justify-content: center; */
+}
+/*---------------------
+    HEADER
+---------------------*/
+header {
+    /* max-width: 1400px; */
+    display: flex;
+    padding: 0;
+    
+    /* justify-content: center; */
+}
+header div {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 50px;
+}
+/*--------------------------
+    RANDOM CARDS
+---------------------------*/
+.card-wrapper {
+    max-width: 1400px;
+    grid-template-columns: repeat(auto-fill, minmax(0, 220px));
+}
+/*----------------------
+    FAVOURITES
+    --------------------*/
+.favourites__title {
+    width: 100%;
+    max-width: 1400px;
+    height: 95px;
+    margin: 0 auto;
+    padding: 0 50px;
+}
+/*----------------
+    UPLOAD DOG
+    --------------*/
+.upload__title {
+    width: 100%;
+    max-width: 1400px;
+    height: 95px;
+    margin: 0 auto;
+    padding: 0 50px;
+}
+.upload__document {
+    padding-top: 0;
+}

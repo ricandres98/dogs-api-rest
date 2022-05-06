@@ -1,14 +1,29 @@
-const API_URL_RANDOM = 'https://api.thedogapi.com/v1/images/search?limit=5';
-const API_URL_FAVOURITE = 'https://api.thedogapi.com/v1/favourites';
-const API_URL_UPLOAD = 'https://api.thedogapi.com/v1/images/upload';
-const API_URL_FAVOURITE_DELETE = (id) => `https://api.thedogapi.com/v1/favourites/${id}`;
+const API_BASE_URL = 'https://api.thedogapi.com/v1';
+
+const API_URL_RANDOM = (quantity) => `${API_BASE_URL}/images/search?limit=${quantity}`;
+const API_URL_FAVOURITE = `${API_BASE_URL}/favourites`;
+const API_URL_UPLOAD = `${API_BASE_URL}/images/upload`;
+const API_URL_FAVOURITE_DELETE = (id) => `${API_BASE_URL}/favourites/${id}`;
 const key = '1305430a-71f1-466c-a452-a2676d7bbc7a';
 
 async function getRandomDogs() {
     const wrapper = document.querySelector('.random__card-wrapper');
     const fragment = new DocumentFragment();
+    const viewportWidth = window.innerWidth;
 
-    const response = await fetch(API_URL_RANDOM);
+    let imageQuantity = 4;
+
+    console.log(viewportWidth);
+    if (viewportWidth >= 1020){
+        if (viewportWidth > 1159) {
+            imageQuantity = 8;
+        } else {
+            imageQuantity = 6
+        }
+    }
+
+
+    const response = await fetch(API_URL_RANDOM(imageQuantity));
     const data = await response.json();
 
     console.log ('random: ', data);
